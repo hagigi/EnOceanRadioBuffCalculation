@@ -176,7 +176,8 @@ void communicate_soracom() {
 
   SerialUSB.println("### Send.");
   //sprintf(data, "{\"app\": 2,\"record\": {\"humidity\":{\"value\":%lu}}}", millis() / 1000);
-  sprintf(data, "{\"app\": 3,\"record\": {\"plant_id\":{\"value\":10},\"temp\":{\"value\":%ld},\"illumi\":{\"value\":%lu},\"humi\":{\"value\":%ld},\"soil_hum\":{\"value\":%lu},\"co2\":{\"value\":%lu}}}", (int)value_temp, value_illumi, (int)value_humi, value_moisture, value_co2);
+  //sprintf(data, "{\"app\": 3,\"record\": {\"plant_id\":{\"value\":10},\"temp\":{\"value\":%ld},\"illumi\":{\"value\":%lu},\"humi\":{\"value\":%ld},\"soil_hum\":{\"value\":%lu},\"co2\":{\"value\":%lu}}}", (int)value_temp, value_illumi, (int)value_humi, value_moisture, value_co2);
+  sprintf(data, "{\"record\": {\"plant_id\":1,\"temp\":%ld,\"illumi\":%lu,\"humi\":%ld,\"soil_hum\":%lu,\"co2\":%lu}}", (int)value_temp, value_illumi, (int)value_humi, value_moisture, value_co2);
   
   SerialUSB.print("Send:");
   SerialUSB.print(data);
